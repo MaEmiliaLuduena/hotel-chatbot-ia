@@ -11,6 +11,7 @@ backend/env/
 backend/venv/
 backend/venv_hotel/
 backend/.env
+backend/models.py
 backend/*.db
 backend/*.sqlite3
 backend/*.json
