@@ -1,0 +1,383 @@
+{
+  "hotel": {
+    "nombre": "Gran Hotel Bell Ville",
+    "ubicacion": {
+      "ciudad": "Bell Ville",
+      "provincia": "Córdoba",
+      "pais": "Argentina",
+      "direccion": "Av. San Martín 123",
+      "codigo_postal": "2550",
+      "coordenadas": {
+        "latitud": -32.6238,
+        "longitud": -62.6833
+      }
+    },
+    "contacto": {
+      "telefono": "+54 3537 424242",
+      "email": "reservas@granhotelbellville.com.ar",
+      "whatsapp": "+54 9 3537 424242",
+      "website": "www.granhotelbellville.com.ar",
+      "redes_sociales": {
+        "facebook": "GranHotelBellVille",
+        "instagram": "@granhotelbellville"
+      }
+    },
+    "horarios": {
+      "recepcion": "24 horas",
+      "check_in": "14:00",
+      "check_out": "10:00",
+      "desayuno": {
+        "inicio": "07:00",
+        "fin": "10:00",
+        "tipo": "Buffet Continental"
+      }
+    },
+    "servicios": [
+      {
+        "nombre": "WiFi",
+        "descripcion": "Internet inalámbrico de alta velocidad",
+        "gratuito": true,
+        "areas": ["todas las áreas", "habitaciones", "lobby", "restaurante"]
+      },
+      {
+        "nombre": "Desayuno",
+        "descripcion": "Desayuno buffet continental incluido",
+        "gratuito": true,
+        "incluido_en_tarifa": true
+      },
+      {
+        "nombre": "Estacionamiento",
+        "descripcion": "Estacionamiento privado vigilado",
+        "gratuito": true,
+        "capacidad": "50 vehículos"
+      },
+      {
+        "nombre": "Piscina",
+        "descripcion": "Piscina climatizada",
+        "gratuito": true,
+        "horario": "08:00 - 22:00"
+      },
+      {
+        "nombre": "Gimnasio",
+        "descripcion": "Gimnasio equipado con máquinas modernas",
+        "gratuito": true,
+        "horario": "06:00 - 23:00"
+      },
+      {
+        "nombre": "Sala de Conferencias",
+        "descripcion": "Sala para reuniones y eventos empresariales",
+        "capacidad": "80 personas",
+        "gratuito": false
+      },
+      {
+        "nombre": "Servicio de Limpieza",
+        "descripcion": "Limpieza diaria de habitaciones",
+        "gratuito": true,
+        "incluido_en_tarifa": true
+      },
+      {
+        "nombre": "Room Service",
+        "descripcion": "Servicio a la habitación",
+        "horario": "07:00 - 23:00",
+        "gratuito": false
+      },
+      {
+        "nombre": "Lavandería",
+        "descripcion": "Servicio de lavandería y planchado",
+        "gratuito": false,
+        "tiempo_entrega": "24 horas"
+      }
+    ],
+    "habitaciones": {
+      "matrimonial": {
+        "nombre": "Habitación Matrimonial",
+        "capacidad_personas": 2,
+        "camas": {
+          "tipo": "Matrimonial",
+          "cantidad": 1,
+          "tamaño": "2 plazas (1.40m x 1.90m)"
+        },
+        "metros_cuadrados": 20,
+        "servicios": [
+          "Baño privado con ducha",
+          "Aire acondicionado",
+          "Calefacción",
+          "TV LED 32 pulgadas",
+          "WiFi gratuito",
+          "Minibar",
+          "Caja de seguridad",
+          "Escritorio",
+          "Armario",
+          "Ropa de cama y toallas"
+        ],
+        "precios": {
+          "temporada_baja": 25000,
+          "temporada_alta": 35000,
+          "moneda": "ARS"
+        },
+        "disponibilidad": 10,
+        "vistas": ["Ciudad", "Calle principal"]
+      },
+      "doble": {
+        "nombre": "Habitación Doble",
+        "capacidad_personas": 2,
+        "camas": {
+          "tipo": "Individual",
+          "cantidad": 2,
+          "tamaño": "1 plaza c/u (0.80m x 1.90m)"
+        },
+        "metros_cuadrados": 22,
+        "servicios": [
+          "Baño privado con ducha",
+          "Aire acondicionado",
+          "Calefacción",
+          "TV LED 32 pulgadas",
+          "WiFi gratuito",
+          "Minibar",
+          "Caja de seguridad",
+          "Escritorio",
+          "Armario",
+          "Ropa de cama y toallas"
+        ],
+        "precios": {
+          "temporada_baja": 28000,
+          "temporada_alta": 38000,
+          "moneda": "ARS"
+        },
+        "disponibilidad": 8,
+        "vistas": ["Ciudad", "Jardín"]
+      },
+      "triple_matrimonial": {
+        "nombre": "Habitación Triple (Matrimonial + Simple)",
+        "capacidad_personas": 3,
+        "camas": {
+          "descripcion": "1 cama matrimonial + 1 cama simple",
+          "matrimonial": {
+            "cantidad": 1,
+            "tamaño": "2 plazas (1.40m x 1.90m)"
+          },
+          "simple": {
+            "cantidad": 1,
+            "tamaño": "1 plaza (0.80m x 1.90m)"
+          }
+        },
+        "metros_cuadrados": 28,
+        "servicios": [
+          "Baño privado con ducha",
+          "Aire acondicionado",
+          "Calefacción",
+          "TV LED 42 pulgadas",
+          "WiFi gratuito",
+          "Minibar",
+          "Caja de seguridad",
+          "Escritorio amplio",
+          "Armario grande",
+          "Ropa de cama y toallas"
+        ],
+        "precios": {
+          "temporada_baja": 32000,
+          "temporada_alta": 45000,
+          "moneda": "ARS"
+        },
+        "disponibilidad": 6,
+        "vistas": ["Ciudad", "Piscina"],
+        "ideal_para": "Familias pequeñas"
+      },
+      "triple_individual": {
+        "nombre": "Habitación Triple (3 Individuales)",
+        "capacidad_personas": 3,
+        "camas": {
+          "tipo": "Individual",
+          "cantidad": 3,
+          "tamaño": "1 plaza c/u (0.80m x 1.90m)"
+        },
+        "metros_cuadrados": 30,
+        "servicios": [
+          "Baño privado con ducha",
+          "Aire acondicionado",
+          "Calefacción",
+          "TV LED 42 pulgadas",
+          "WiFi gratuito",
+          "Minibar",
+          "Caja de seguridad",
+          "Escritorio amplio",
+          "Armario grande",
+          "Ropa de cama y toallas"
+        ],
+        "precios": {
+          "temporada_baja": 32000,
+          "temporada_alta": 45000,
+          "moneda": "ARS"
+        },
+        "disponibilidad": 5,
+        "vistas": ["Jardín", "Piscina"],
+        "ideal_para": "Grupos de amigos o compañeros de trabajo"
+      }
+    },
+    "politicas": {
+      "cancelacion": {
+        "gratuita_hasta": "48 horas antes del check-in",
+        "cargo_cancelacion_tardia": "100% de la primera noche",
+        "no_show": "Se cobra el total de la estadía"
+      },
+      "mascotas": {
+        "permitidas": false,
+        "observaciones": "No se permiten mascotas en el hotel"
+      },
+      "ninos": {
+        "menores_5_anos": "No pagan",
+        "de_5_a_12_anos": "50% de descuento",
+        "mayores_12_anos": "Tarifa completa"
+      },
+      "fumadores": {
+        "permitido": false,
+        "areas_designadas": ["Patio exterior", "Balcones privados (si aplica)"],
+        "multa_por_fumar_habitacion": 10000
+      },
+      "garantia_reserva": {
+        "metodo": "Tarjeta de crédito",
+        "requerido": true,
+        "descripcion": "Se requiere tarjeta de crédito válida para garantizar la reserva"
+      },
+      "edad_minima_check_in": 18,
+      "identificacion_requerida": true
+    },
+    "formas_pago": {
+      "aceptadas": [
+        "Efectivo (ARS)",
+        "Tarjetas de débito",
+        "Tarjetas de crédito",
+        "Transferencia bancaria"
+      ],
+      "tarjetas": {
+        "credito": ["Visa", "Mastercard", "American Express", "Cabal"],
+        "debito": ["Visa Débito", "Maestro", "Cabal Débito"]
+      },
+      "cuotas": {
+        "disponible": true,
+        "hasta": "6 cuotas sin interés con tarjetas seleccionadas"
+      },
+      "anticipos": {
+        "requerido": false,
+        "opcional": "Se puede realizar un anticipo del 30% para confirmar"
+      }
+    },
+    "temporadas": {
+      "alta": {
+        "nombre": "Temporada Alta",
+        "periodos": [
+          {
+            "inicio": "2024-12-01",
+            "fin": "2025-02-28",
+            "descripcion": "Verano"
+          },
+          {
+            "descripcion": "Semana Santa",
+            "aproximado": "Marzo/Abril según calendario"
+          },
+          {
+            "descripcion": "Feriados largos",
+            "ejemplos": ["25 de Mayo", "9 de Julio", "12 de Octubre"]
+          }
+        ],
+        "incremento_porcentual": 40
+      },
+      "baja": {
+        "nombre": "Temporada Baja",
+        "descripcion": "Resto del año fuera de períodos de temporada alta",
+        "ventajas": ["Precios más accesibles", "Mayor disponibilidad", "Atención más personalizada"]
+      }
+    },
+    "atracciones_cercanas": [
+      {
+        "nombre": "Plaza Independencia",
+        "distancia_km": 0.5,
+        "descripcion": "Plaza principal de la ciudad",
+        "tiempo_caminando": "7 minutos"
+      },
+      {
+        "nombre": "Museo de la Ciudad",
+        "distancia_km": 0.8,
+        "descripcion": "Museo con historia local",
+        "tiempo_caminando": "10 minutos"
+      },
+      {
+        "nombre": "Catedral San Antonio de Padua",
+        "distancia_km": 0.6,
+        "descripcion": "Iglesia histórica de la ciudad",
+        "tiempo_caminando": "8 minutos"
+      },
+      {
+        "nombre": "Complejo La Costa",
+        "distancia_km": 3,
+        "descripcion": "Balneario y área recreativa",
+        "tiempo_auto": "10 minutos"
+      },
+      {
+        "nombre": "Centro Comercial",
+        "distancia_km": 0.3,
+        "descripcion": "Zona de compras y gastronomía",
+        "tiempo_caminando": "5 minutos"
+      }
+    ],
+    "preguntas_frecuentes": [
+      {
+        "pregunta": "¿El desayuno está incluido?",
+        "respuesta": "Sí, el desayuno buffet está incluido en todas las tarifas y se sirve de 7:00 a 10:00 hs."
+      },
+      {
+        "pregunta": "¿Tienen estacionamiento?",
+        "respuesta": "Sí, contamos con estacionamiento privado gratuito con capacidad para 50 vehículos."
+      },
+      {
+        "pregunta": "¿Puedo cancelar mi reserva?",
+        "respuesta": "Sí, puede cancelar sin cargo hasta 48 horas antes del check-in. Después de ese plazo se cobra el 100% de la primera noche."
+      },
+      {
+        "pregunta": "¿Aceptan mascotas?",
+        "respuesta": "No, lamentablemente no aceptamos mascotas en el hotel."
+      },
+      {
+        "pregunta": "¿Los niños pagan?",
+        "respuesta": "Los menores de 5 años no pagan. De 5 a 12 años tienen 50% de descuento."
+      },
+      {
+        "pregunta": "¿Tienen WiFi?",
+        "respuesta": "Sí, WiFi gratuito de alta velocidad en todas las áreas del hotel."
+      },
+      {
+        "pregunta": "¿A qué hora es el check-in y check-out?",
+        "respuesta": "Check-in: 14:00 hs. Check-out: 10:00 hs."
+      },
+      {
+        "pregunta": "¿Qué formas de pago aceptan?",
+        "respuesta": "Aceptamos efectivo, tarjetas de débito, crédito (Visa, Mastercard, Amex) y transferencias."
+      },
+      {
+        "pregunta": "¿Tienen piscina?",
+        "respuesta": "Sí, contamos con piscina climatizada disponible de 8:00 a 22:00 hs."
+      },
+      {
+        "pregunta": "¿Está cerca del centro?",
+        "respuesta": "Sí, estamos a solo 5 minutos caminando del centro de Bell Ville."
+      }
+    ],
+    "certificaciones": [
+      "Habilitación municipal vigente",
+      "Certificado de seguridad e higiene",
+      "Protocolo COVID-19 aprobado"
+    ],
+    "estrellas": 3,
+    "ano_inauguracion": 2010,
+    "ultima_renovacion": 2022,
+    "total_habitaciones": 29,
+    "pisos": 3,
+    "ascensor": true,
+    "accesibilidad": {
+      "rampas": true,
+      "habitaciones_adaptadas": 2,
+      "banos_adaptados": true,
+      "ascensor_accesible": true
+    }
+  }
+}

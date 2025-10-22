@@ -1,0 +1,46 @@
+# === FRONTEND (React + Vite) ===
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.DS_Store
+frontend/.vscode/
+
+# === BACKEND (Flask / Python) ===
+backend/__pycache__/
+backend/env/
+backend/venv/
+backend/venv_hotel/
+backend/.env
+backend/*.db
+backend/*.sqlite3
+backend/*.json
+# Ignorar todos los .txt del backend
+backend/*.txt
+# Pero mantener este archivo específico
+!backend/requirements.txt
+backend/instance/
+
+# === ARCHIVOS GENERADOS ===
+reservas.db
+analisis_reservas.txt
+resultados_precision.json
+
+# === ENTORNOS VIRTUALES ===
+venv/
+.venv/
+env/
+env_hotel/
+venv_hotel/
+
+# === SISTEMA / IDE ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# === LOGS ===
+*.log
+
+# === OTROS ===
+*.pyc
+__pycache__/
