@@ -12,7 +12,7 @@ from datetime import datetime
 # URL del API
 API_URL = "http://localhost:5000/api/chat"
 
-# Dataset de pruebas: (pregunta, palabras_clave_esperadas)
+# Dataset de pruebas - Lista de tuplas: (pregunta, palabras_clave_esperadas)
 DATASET_PRUEBAS = [
     # Información básica del hotel
     ("¿Cuál es la dirección del hotel?", ["San Martín", "123", "Bell Ville"]),
@@ -98,6 +98,7 @@ def ejecutar_pruebas():
     resultados = []
     correctas = 0
     
+    # Por cada pregunta evía una petición POST a la API
     for i, (pregunta, palabras_clave) in enumerate(DATASET_PRUEBAS, 1):
         print(f"\n[{i}/{len(DATASET_PRUEBAS)}] Pregunta: {pregunta}")
         print(f"Palabras clave esperadas: {', '.join(palabras_clave)}")
@@ -107,12 +108,13 @@ def ejecutar_pruebas():
             response = requests.post(
                 API_URL,
                 json={
-                    'message': pregunta,
-                    'history': []
+                    'message': pregunta, # la pregunta que haría el usuario
+                    'history': [] # vacío (no hay contexto previo)
                 },
-                timeout=30
+                timeout=30 # 30 segundos máximo para recibir respuesta
             )
             
+            # Si la respuesta es correcta obtiene el texto del chatbot
             if response.status_code == 200:
                 data = response.json()
                 respuesta = data.get('response', '')
@@ -135,6 +137,7 @@ def ejecutar_pruebas():
                     'palabras_clave': palabras_clave,
                     'correcta': es_correcta
                 })
+            # Si hay error HTTP o de conexión, lo registra como incorrecto
             else:
                 print(f"❌ Error HTTP: {response.status_code}")
                 resultados.append({
@@ -153,7 +156,7 @@ def ejecutar_pruebas():
                 'correcta': False
             })
         
-        # Pequeña pausa entre requests
+        # Espera 0.5 segundos antes de la siguiente prueba
         time.sleep(0.5)
         print("-" * 80)
     
@@ -194,7 +197,7 @@ def ejecutar_pruebas():
 
 if __name__ == "__main__":
     try:
-        # Verificar que el servidor esté corriendo
+        # Antes de correr las pruebas verifica que el servidor esté corriendo
         try:
             health_check = requests.get("http://localhost:5000/api/health", timeout=5)
             if health_check.status_code != 200:

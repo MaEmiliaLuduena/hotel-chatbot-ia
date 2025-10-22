@@ -8,10 +8,11 @@ from datetime import datetime, timedelta
 from unidecode import unidecode
 import sqlite3
 
+# Cargar .env
 load_dotenv()
 
-app = Flask(__name__)
-CORS(app)
+app = Flask(__name__) # crea una instancia de la aplicación web Flask
+CORS(app) # permite peticiones desde cualquier origen
 
 # Configurar Gemini
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
@@ -104,6 +105,7 @@ def init_db():
     conn.commit()
     conn.close()
 
+# Crear tabla reservas si no existe
 init_db()
 
 # Contexto del sistema para Gemini
@@ -180,6 +182,7 @@ def calcular_precio_reserva(tipo_habitacion, fecha_checkin, fecha_checkout):
         precio_total = 0
         fecha_actual = checkin
         
+        # suma el precio por cada noche de la estadía
         while fecha_actual < checkout:
             if es_temporada_alta(fecha_actual.strftime("%Y-%m-%d")):
                 precio_total += habitacion["precio_temporada_alta"]
@@ -195,6 +198,8 @@ def calcular_precio_reserva(tipo_habitacion, fecha_checkin, fecha_checkout):
     except:
         return None
 
+# API principal en Flask. Función del chat que se comunica con Gemini.
+# Endpoint /api/chat -> URL donde la aplicación cliente puede enviar solicitudes para acceder a recursos o ejecutar funciones de un servidor.
 @app.route('/api/chat', methods=['POST'])
 def chat():
     try:
@@ -242,10 +247,12 @@ def chat():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# GET → devuelve HABITACIONES
 @app.route('/api/habitaciones', methods=['GET'])
 def get_habitaciones():
     return jsonify(HABITACIONES)
 
+# GET → info de un tipo de habitación
 @app.route('/api/habitacion/<tipo>', methods=['GET'])
 def get_habitacion(tipo):
     habitacion = HABITACIONES.get(tipo)
@@ -253,6 +260,7 @@ def get_habitacion(tipo):
         return jsonify(habitacion)
     return jsonify({'error': 'Habitación no encontrada'}), 404
 
+# POST → llama a calcular_precio_reserva y devuelve JSON con noches/precio.
 @app.route('/api/calcular-precio', methods=['POST'])
 def calcular_precio():
     try:
@@ -270,6 +278,7 @@ def calcular_precio():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# POST → valida campos requeridos, calcula precio, inserta reserva en SQLite 
 @app.route('/api/reservar', methods=['POST'])
 def crear_reserva():
     try:
@@ -332,6 +341,7 @@ def crear_reserva():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# GET → devuelve últimos 50 registros
 @app.route('/api/reservas', methods=['GET'])
 def get_reservas():
     try:
@@ -362,6 +372,7 @@ def get_reservas():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# GET → salud del servicio
 @app.route('/api/health', methods=['GET'])
 def health():
     return jsonify({'status': 'ok', 'message': 'API funcionando correctamente'})
