@@ -2,7 +2,7 @@
 # Sistema de Gestión de Reservas con Inteligencia Artificial
 
 ## 📖 Descripción
-Sistema inteligente de chatbot para la gestión automatizada de reservas hoteleras. Utiliza procesamiento delenguaje natural (NLP) con Gemini AI para proporcionar una experiencia conversacional natural, con soporte para texto y voz.
+Sistema inteligente de chatbot para la gestión automatizada de reservas hoteleras. Utiliza procesamiento de lenguaje natural (NLP) con Gemini AI para proporcionar una experiencia conversacional natural, con soporte para texto y voz.
 
 ## 🎯 Características Principales
 * ✅ __Conversación Natural:__ Chat inteligente con comprensión contextual
