@@ -237,6 +237,8 @@ Los resultados detallados se guardan automáticamente en formato JSON para audit
 Este proyecto fue desarrollado como proyecto final para el curso de Big Data & Inteligencia Artificial.
 
 __Autor:__ María Emilia Ludueña
+
 __Fecha:__ 21 Octubre 2025
+
 __Institución:__ Ayi Academy - Ayi Group
 
