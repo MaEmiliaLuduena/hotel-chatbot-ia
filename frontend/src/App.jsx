@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Mic, MicOff, Image, Calendar, Users, Mail, Phone, User } from 'lucide-react';
+import { Send, Mic, MicOff, Image, Calendar, Users, Mail, Phone, User } from 'lucide-react'; // íconos
 
 const HotelChatbot = () => {
+  // El primer mensaje es un assistant de bienvenida
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
@@ -16,6 +17,7 @@ const HotelChatbot = () => {
   const messagesEndRef = useRef(null);
   const recognitionRef = useRef(null);
 
+  // Para el formulario de reserva
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -26,6 +28,7 @@ const HotelChatbot = () => {
     huespedes: 1
   });
 
+  // Descripción de las habitaciones
   const habitaciones = {
     matrimonial: { nombre: 'Matrimonial', capacidad: 2 },
     doble: { nombre: 'Doble', capacidad: 2 },
@@ -33,6 +36,7 @@ const HotelChatbot = () => {
     triple_individual: { nombre: 'Triple (3 Individuales)', capacidad: 3 }
   };
 
+  // Envía imagenes de habitaciones segun corresponda
   const imagenesHabitaciones = {
     matrimonial: 'https://images.unsplash.com/photo-1645619200527-c6786729c2da?w=870',
     doble: 'https://images.unsplash.com/photo-1605346576608-92f1346b67d6?w=870',
@@ -44,6 +48,7 @@ const HotelChatbot = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Web Speech API - Inicializa reconocimiento de voz
   useEffect(() => {
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -52,6 +57,7 @@ const HotelChatbot = () => {
       recognitionRef.current.interimResults = false;
       recognitionRef.current.lang = 'es-AR';
 
+      // cuando el usuario habla, el evento onresult captura el texto y lo envía al backend igual que si lo hubiera escrito.
       recognitionRef.current.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         setInputMessage(transcript);
@@ -72,6 +78,7 @@ const HotelChatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Inicia/detiene la escucha
   const toggleListening = () => {
     if (isListening) {
       recognitionRef.current?.stop();
@@ -95,6 +102,7 @@ const HotelChatbot = () => {
     setInputMessage('');
     setIsLoading(true);
 
+    // El frontend hace llamadas HTTP al backend usando fetch. Por ejemplo, cuando el usuario envía un mensaje.
     try {
       const response = await fetch('http://localhost:5000/api/chat', {
         method: 'POST',
